@@ -1,0 +1,34 @@
+<style>
+	.blue {
+		color: blue;
+	}
+	.margins {
+		margin: 10px 0;
+	}
+</style>
+<h3 class="blue">
+	Está es mi segunda aplicación
+</h3>
+<p class="red">
+	Este es un parrafo tomando el color de la app uno
+</p>
+<p *ng-for="#messageVariable of messageList; #i = index">
+	{{messageVariable.message}} en posición {{i}}
+</p>
+<p>
+	<h3>Lista de personas en App 2</h3>
+	{{peopleService | json}}
+	<p *ng-for="#person of peopleService.personList">
+		- Nombre - : {{person.name}} <br>
+		- Apellido - : {{person.lastName}} <br>
+		- Edad - : {{person.age}}
+	</p>
+</p>
+<div class="margins">
+	<input type="text" placeholder="Nombre" #name>
+	<input type="text" placeholder="Apellido" #lastname>
+	<input type="number" placeholder="Edad" #age>
+	<br>
+	<button (click)="peopleService.addPerson({name: name.value, lastName: lastname.value, age: age.value});">Agregar persona</button>
+</div>
+<button (click)="bootstrapThirdApp()">Iniciar App Tres</button>
