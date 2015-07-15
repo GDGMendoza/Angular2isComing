@@ -1,15 +1,15 @@
 System.config({
   "baseURL": "/",
   "defaultJSExtensions": true,
-  "transpiler": "typescript",
-  "typescriptOptions": {
-    "module": "commonjs",
-    "emitDecoratorMetadata": true
+  "transpiler": "babel",
+  "babelOptions": {
+    "optional": [
+      "runtime"
+    ]
   },
   "paths": {
     "github:*": "jspm_packages/github/*",
-    "npm:*": "jspm_packages/npm/*",
-    "app": "app"
+    "npm:*": "jspm_packages/npm/*"
   },
   "packages": {
     "first-app": {
@@ -20,15 +20,14 @@ System.config({
 
 System.config({
   "map": {
-    "angular2": "npm:angular2@2.0.0-alpha.28",
+    "angular2": "npm:angular2@2.0.0-alpha.31",
+    "babel": "npm:babel-core@5.6.20",
+    "babel-runtime": "npm:babel-runtime@5.6.20",
+    "core-js": "npm:core-js@0.9.18",
     "es6-shim": "github:es-shims/es6-shim@0.32.3",
-    "lodash": "npm:lodash@3.9.3",
     "reflect-metadata": "npm:reflect-metadata@0.1.0",
     "rx": "npm:rx@2.5.3",
-    "traceur": "github:jmcriffey/bower-traceur@0.0.88",
-    "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.88",
-    "typescript": "github:mhegazy/typescript@v1.5-beta2",
-    "zone.js": "npm:zone.js@0.5.1",
+    "zone.js": "npm:zone.js@0.5.2",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
@@ -44,23 +43,28 @@ System.config({
     "github:jspm/nodelibs-util@0.1.0": {
       "util": "npm:util@0.10.3"
     },
-    "npm:angular2@2.0.0-alpha.28": {
+    "npm:angular2@2.0.0-alpha.31": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.1",
       "reflect-metadata": "npm:reflect-metadata@0.1.0",
       "rx": "npm:rx@2.5.1",
       "url": "github:jspm/nodelibs-url@0.1.0",
-      "zone.js": "npm:zone.js@0.5.1"
+      "zone.js": "npm:zone.js@0.5.2"
     },
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
     },
+    "npm:babel-runtime@5.6.20": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
+    },
+    "npm:core-js@0.9.18": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "process": "github:jspm/nodelibs-process@0.1.1",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+    },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
-    },
-    "npm:lodash@3.9.3": {
-      "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:path-browserify@0.0.0": {
       "process": "github:jspm/nodelibs-process@0.1.1"
@@ -87,7 +91,7 @@ System.config({
       "inherits": "npm:inherits@2.0.1",
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
-    "npm:zone.js@0.5.1": {
+    "npm:zone.js@0.5.2": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     }
   }
